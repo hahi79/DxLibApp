@@ -155,6 +155,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="WinMain10.cpp" />
+    <ClCompile Include="WinMain2.cpp" />
+    <ClCompile Include="WinMain3.cpp" />
+    <ClCompile Include="WinMain4.cpp" />
+    <ClCompile Include="WinMain5.cpp" />
+    <ClCompile Include="WinMain6.cpp" />
+    <ClCompile Include="WinMain7.cpp" />
+    <ClCompile Include="WinMain8.cpp" />
+    <ClCompile Include="WinMain9.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
