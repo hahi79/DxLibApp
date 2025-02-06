@@ -1,3 +1,4 @@
+#if 0
 #include < DxLib.h>
 
 int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lpC, int nC)
@@ -31,9 +32,11 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lpC, int nC)
 	model1 = MV1LoadModel("Player/PC.mv1");
 //	model1 = MV1LoadModel("Model/MEIKO.pmd");
 //	model1 = MV1LoadModel("Model/鏡音リン.pmd");
+//	model1 = MV1LoadModel("Model/初音ミク.pmd");
 	if (model1 == -1) {
 		return -1;
 	}
+
 	anim_nutral = MV1LoadModel("Player/Anim_Neutral.mv1");
 	if (anim_nutral == -1) {
 		return -1;
@@ -42,14 +45,15 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lpC, int nC)
 	if (anim_run == -1) {
 		return -1;
 	}
-	attachidx = MV1AttachAnim(model1, 0, anim_nutral);
+//	attachidx = MV1AttachAnim(model1, 0, anim_nutral);
+	attachidx = MV1AttachAnim(model1, 0);
 	anim_totaltime = MV1GetAttachAnimTotalTime(model1, attachidx);
 	rootflm = MV1SearchFrame(model1, "root");                 
 	MV1SetFrameUserLocalMatrix(model1, rootflm, MGetIdent()); 
 
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	SetCameraPositionAndTargetAndUpVec(cpos, ctgt, VGet(0.0f, 0.0f, 1.0f)); // ★★追加
+//	SetCameraPositionAndTargetAndUpVec(cpos, ctgt, VGet(0.0f, 0.0f, 1.0f)); // ★★追加
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		//アニメーション進行  
@@ -85,7 +89,7 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lpC, int nC)
 
 		MV1SetRotationXYZ(model1, VGet(0.0f, 1.57f * direction, 0.0f));
 		MV1SetPosition(model1, pos);
-//		MV1SetScale(model1, VGet(10, 10, 10));
+		MV1SetScale(model1, VGet(10, 10, 10));
 		// mat1 = MGetRotY(1.57f * direction);
 		// mat2 = MGetTranslate(pos);
 		// MV1SetMatrix(model1, MMult(mat1, mat2));
@@ -96,3 +100,4 @@ int WINAPI WinMain(HINSTANCE hI, HINSTANCE hP, LPSTR lpC, int nC)
 	DxLib_End();
 	return 0;
 }
+#endif

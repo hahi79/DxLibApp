@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="WinMain10.cpp" />
+    <ClCompile Include="WinMain11.cpp" />
     <ClCompile Include="WinMain2.cpp" />
     <ClCompile Include="WinMain3.cpp" />
     <ClCompile Include="WinMain4.cpp" />
